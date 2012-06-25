@@ -1,0 +1,33 @@
+name: SimpleCMD
+main: net.eden.SimpleCMD.SimpleCMD
+softdepend: [Vault]
+version: 1
+authors:
+  - Eden
+commands:
+  ie:
+    description: Kann einen einzelnen Block setzen
+    permission: eden.set
+    usage: /<command>
+    aliases: [pen]
+  invfrom:
+    description: Run Willy!
+    permission: simplecmd.*
+    usage: /<command>
+    aliases: [pen]
+permissions:
+  eden.*:
+      description: Voller Zugriff auf die Eden Befehle
+      children:
+          eden.set: true
+  eden.set:
+      description: Kann einen einzelnen Block setzen.
+  simplecmd.*:
+      description: Voller Zugriff auf die SimpleCMD Befehle
+      children:
+          simplecmd.can_remedy_promotion: true
+          simplecmd.can_set_player: true
+  simplecmd.can_remedy_promotion:
+      description: Kann einen einzelnen Block setzen
+  simplecmd.can_set_player:
+      description: Kann die Promotionen setzen.
